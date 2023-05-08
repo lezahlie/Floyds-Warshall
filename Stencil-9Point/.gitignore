@@ -1,15 +1,13 @@
-# *.txt
-# *.dat
-# *.raw
-# *.o
-# *.ps1
-# *.mp4
+*.txt
+*.dat
+*.raw
+*.o
+*.mp4
 
-# **/.git
-# **/.vscode
-# **/batch_jobs
-# **/logs
-# **/plots
-# **/data
-# **/videos
+**/.git
+**/batch_jobs
+**/logs
+**/plots
+**/data
+**/videos
 
