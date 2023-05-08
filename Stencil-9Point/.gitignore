@@ -1,0 +1,15 @@
+# *.txt
+# *.dat
+# *.raw
+# *.o
+# *.ps1
+# *.mp4
+
+# **/.git
+# **/.vscode
+# **/batch_jobs
+# **/logs
+# **/plots
+# **/data
+# **/videos
+

@@ -9,20 +9,24 @@
 #include "utilities.h"
 
 int main(int argn, char **argv) {
-    int ret = 1; 
+    int ret = EXIT_FAILURE;
     // check if all args were entered 
     if (argn != 2) {       
         printf("Usage: %s <input_data_file>\n", argv[0]);
-    }else{
-        char * infile = argv[1];
-        double *A;
-        int n = 0, m = 0;
-        // read in matrix from (.dat) file
-        printf("Reading data from '%s'", infile);
-        if((ret = read2D(&A, &n, &m, infile)) == 0){
-            print2D(A, n, m);       // print the matrix
-            free(A);
-        }
+        goto end;
     }
+    int m = 0, n = 0; 
+    char * infile = argv[1];
+    double * A = NULL;
+
+    // read in matrix from (.dat) file
+    printf("Reading data from '%s'\n", infile);
+    if(read2D(&A, &m, &n, infile) == ERROR) goto end;
+    print2D(A, m, n);       // print the matrix
+    free(A);
+
+    ret = EXIT_SUCCESS;
+
+end:
     exit(ret); 
 }
